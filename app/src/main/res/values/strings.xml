@@ -5,4 +5,6 @@
     <string name="lorem_ipsum_15">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tristique a ex vel dictum. Proin.</string>
     <string name="your_score">Skor Kamu</string>
     <string name="main_menu">Menu Utama</string>
+    <string name="set_question">Pilih Soal</string>
+    <string name="next">Lanjut</string>
 </resources>
