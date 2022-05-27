@@ -34,20 +34,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="TextView"
+            android:textSize="23sp"
+            tools:text="Kepala"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            tools:text="Bagian Tubuh"
             android:textAlignment="center" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_volume_up" />
+        <ImageButton
+            android:id="@+id/btn_record3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_view"
+            android:src="@drawable/ic_volume_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
