@@ -7,9 +7,13 @@
     <string name="main_menu">Menu Utama</string>
     <string name="set_question">Pilih Soal</string>
     <string name="next">Lanjut</string>
-    <string name="have_account">Belum punya akun?</string>
+    <string name="do_not_have_account">Belum punya akun?</string>
     <string name="register">Daftar</string>
     <string name="login">Masuk</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="have_account">Sudah punya akun?</string>
+    <string name="parents_name">Nama orang tua</string>
+    <string name="child_name">Nama anak</string>
+    <string name="confirm_password">Konfirmasi password</string>
 </resources>
