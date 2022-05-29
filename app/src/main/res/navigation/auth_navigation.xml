@@ -22,5 +22,13 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_pickGenderFragment"
+            app:destination="@id/pickGenderFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/pickGenderFragment"
+        android:name="com.pedulibicara.pedulibicara.ui.auth.PickGenderFragment"
+        android:label="fragment_pick_gender"
+        tools:layout="@layout/fragment_pick_gender" />
 </navigation>

@@ -52,6 +52,10 @@ class RegisterFragment : Fragment() {
                 view.findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
             }
 
+            btnRegister.setOnClickListener { view ->
+                view.findNavController().navigate(R.id.action_registerFragment_to_pickGenderFragment)
+            }
+
         }
     }
 
