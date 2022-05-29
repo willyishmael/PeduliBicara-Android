@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_guess_voice">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_guess_voice"
+    app:startDestination="@id/setQuestionCountFragment">
 
+    <fragment
+        android:id="@+id/setQuestionCountFragment"
+        android:name="com.pedulibicara.pedulibicara.ui.guessvoice.SetQuestionCountFragment"
+        android:label="fragment_set_question_count"
+        tools:layout="@layout/fragment_set_question_count" >
+        <action
+            android:id="@+id/action_setQuestionCountFragment_to_guessVoicePlayFragment"
+            app:destination="@id/guessVoicePlayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/guessVoicePlayFragment"
+        android:name="com.pedulibicara.pedulibicara.ui.guessvoice.GuessVoicePlayFragment"
+        android:label="fragment_guess_voice_play"
+        tools:layout="@layout/fragment_guess_voice_play" >
+        <action
+            android:id="@+id/action_guessVoicePlayFragment_self"
+            app:destination="@id/guessVoicePlayFragment" />
+        <action
+            android:id="@+id/action_guessVoicePlayFragment_to_gameResultFragment"
+            app:destination="@id/gameResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameResultFragment"
+        android:name="com.pedulibicara.pedulibicara.ui.gameresult.GameResultFragment"
+        android:label="fragment_game_result"
+        tools:layout="@layout/fragment_game_result" />
 </navigation>
