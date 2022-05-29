@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/module_navigation"
+    app:startDestination="@id/moduleCategoryFragment">
+
+    <fragment
+        android:id="@+id/moduleCategoryFragment"
+        android:name="com.pedulibicara.pedulibicara.ui.module.ModuleCategoryFragment"
+        android:label="fragment_module_category"
+        tools:layout="@layout/fragment_module_category" >
+        <action
+            android:id="@+id/action_moduleCategoryFragment_to_moduleItemFragment"
+            app:destination="@id/moduleItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moduleItemFragment"
+        android:name="com.pedulibicara.pedulibicara.ui.module.ModuleItemFragment"
+        android:label="fragment_module_item"
+        tools:layout="@layout/fragment_module_item" >
+        <action
+            android:id="@+id/action_moduleItemFragment_to_moduleItemDetailFragment"
+            app:destination="@id/moduleItemDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moduleItemDetailFragment"
+        android:name="com.pedulibicara.pedulibicara.ui.module.ModuleItemDetailFragment"
+        android:label="fragment_module_item_detail"
+        tools:layout="@layout/fragment_module_item_detail" />
+</navigation>
