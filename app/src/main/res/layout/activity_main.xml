@@ -93,6 +93,7 @@
                 android:layout_marginTop="16dp" />
 
             <include
+                android:id="@+id/mc_guess_voice"
                 layout="@layout/module_card_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
