@@ -5,20 +5,16 @@
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.4166666666666667" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/drawable/rounded_view.xml" value="0.1365" />
-        <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/activity_auth.xml" value="0.25" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/activity_module.xml" value="0.209375" />
-        <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/fragment_login.xml" value="0.44234800838574423" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/fragment_module_category.xml" value="0.22" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/fragment_module_item.xml" value="0.209375" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/fragment_module_item_detail.xml" value="0.33" />
-        <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/fragment_pick_gender.xml" value="0.22" />
-        <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/fragment_register.xml" value="0.22" />
-        <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/fragment_set_question_count.xml" value="0.20520833333333333" />
-        <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/gender_view.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/modul_card_view.xml" value="0.75" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/module_card_view.xml" value="0.19444444444444445" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/module_item_view.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/rounded_view.xml" value="0.4855" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_guess_cards.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_module.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_game_result.xml" value="0.5911458333333334" />
@@ -26,6 +22,7 @@
         <entry key="app/src/main/res/layout/fragment_guess_voice_play.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/fragment_module_category.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/fragment_module_item.xml" value="0.5911458333333334" />
+        <entry key="app/src/main/res/layout/fragment_module_item_detail.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/fragment_set_question_count.xml" value="0.5" />
         <entry key="app/src/main/res/layout/module_card_view.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/module_item_view.xml" value="0.5911458333333334" />
