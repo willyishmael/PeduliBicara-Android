@@ -45,8 +45,7 @@ class ModuleCategoryAdapter(
         }
 
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(
-                listCategory[holder.adapterPosition])
+            onItemClickCallback.onItemClicked(category)
         }
     }
 

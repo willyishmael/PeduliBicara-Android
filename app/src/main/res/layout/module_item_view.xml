@@ -7,7 +7,7 @@
     android:background="@drawable/rounded_view">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivItemImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
