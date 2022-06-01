@@ -16,4 +16,10 @@
     <string name="parents_name">Nama orang tua</string>
     <string name="child_name">Nama anak</string>
     <string name="confirm_password">Konfirmasi password</string>
+    <string name="body_parts">Bagian Tubuh</string>
+    <string name="body_parts_description">Terdiri atas berbagai jenis bagian tubuh</string>
+    <string name="food">Makanan</string>
+    <string name="food_description">Terdiri atas berbagai jenis makanan</string>
+    <string name="animals">Hewan</string>
+    <string name="animals_description">Terdiri atas berbagai jenis hewan</string>
 </resources>
