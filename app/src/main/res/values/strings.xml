@@ -22,4 +22,9 @@
     <string name="food_description">Terdiri atas berbagai jenis makanan</string>
     <string name="animals">Hewan</string>
     <string name="animals_description">Terdiri atas berbagai jenis hewan</string>
+    <string name="module_description">Modul terdiri dari 3 kategori (Hewan, Makanan dan Bagian Tubuh)</string>
+    <string name="guess_card">Tebak Kartu</string>
+    <string name="guess_card_description">Diberikan beberapa opsi kartu secara acak untuk menjawab pertanyaan via suara</string>
+    <string name="guess_voice">Tebak suara</string>
+    <string name="guess_voice_description">Menebak kartu yang ditampilkan, dengan menggunakan sistem speech recognition</string>
 </resources>
