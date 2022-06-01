@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.pedulibicara.pedulibicara.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.pedulibicara.pedulibicara.data.local.Data
 import com.pedulibicara.pedulibicara.databinding.FragmentModuleCategoryBinding
+import com.pedulibicara.pedulibicara.ui.adapter.ListCategoryAdapter
 
 @Suppress("RedundantNullableReturnType")
 class ModuleCategoryFragment : Fragment() {
@@ -21,11 +23,14 @@ class ModuleCategoryFragment : Fragment() {
     private var _binding: FragmentModuleCategoryBinding? = null
     private val binding get() = _binding!!
 
+    private val listCategory = Data.getModuleCategory()
+
+    @Suppress("RedundantNullableReturnType")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentModuleCategoryBinding.inflate(inflater, container, false)
+        _binding = FragmentModuleCategoryBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -33,7 +38,7 @@ class ModuleCategoryFragment : Fragment() {
     @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ModuleCategoryViewModel::class.java)
+        viewModel = ViewModelProvider(this)[ModuleCategoryViewModel::class.java]
         // TODO: Use the ViewModel
     }
 
@@ -49,7 +54,12 @@ class ModuleCategoryFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
+        val mAdapter = ListCategoryAdapter(listCategory)
 
+        binding.rvListCategory.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = mAdapter
+        }
     }
 
 }

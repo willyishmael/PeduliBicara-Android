@@ -50,6 +50,7 @@ dependencies {
 
     // Customize View
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.1'
 
     // Image
     implementation "com.github.bumptech.glide:glide:4.13.0"
