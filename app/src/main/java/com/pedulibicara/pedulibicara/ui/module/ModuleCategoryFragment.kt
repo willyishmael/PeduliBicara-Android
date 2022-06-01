@@ -6,11 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pedulibicara.pedulibicara.data.local.Data
 import com.pedulibicara.pedulibicara.data.model.ModuleCategory
 import com.pedulibicara.pedulibicara.databinding.FragmentModuleCategoryBinding
-import com.pedulibicara.pedulibicara.ui.adapter.ListCategoryAdapter
+import com.pedulibicara.pedulibicara.ui.adapter.ModuleCategoryAdapter
 
 @Suppress("RedundantNullableReturnType")
 class ModuleCategoryFragment : Fragment() {
@@ -55,12 +56,14 @@ class ModuleCategoryFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        val mAdapter = ListCategoryAdapter(listCategory)
+        val mAdapter = ModuleCategoryAdapter(listCategory)
 
-        mAdapter.setOnItemClickCallback(object : ListCategoryAdapter.OnItemClickCallback{
+        mAdapter.setOnItemClickCallback(object : ModuleCategoryAdapter.OnItemClickCallback{
             override fun onItemClicked(moduleCategory: ModuleCategory) {
 
-                
+                val destination = ModuleCategoryFragmentDirections.actionModuleCategoryFragmentToModuleItemFragment()
+                destination.categoryKey = moduleCategory.key
+                findNavController().navigate(destination)
 
             }
         })
