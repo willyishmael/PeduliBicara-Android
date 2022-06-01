@@ -12,6 +12,16 @@ class ListCategoryAdapter(
     private val listCategory: List<Category>
 ) : RecyclerView.Adapter<ListCategoryAdapter.ViewHolder>() {
 
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    interface OnItemClickCallback {
+        fun onItemClicked(category: Category)
+    }
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     class ViewHolder(
         var binding: ModuleCardViewBinding
         ) : RecyclerView.ViewHolder(binding.root)
@@ -38,6 +48,10 @@ class ListCategoryAdapter(
                 .into(ivModuleImage)
             tvModuleTitle.text = category.title
             tvModuleDescription.text = category.description
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(category)
         }
     }
 
