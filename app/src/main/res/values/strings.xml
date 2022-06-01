@@ -29,4 +29,8 @@
     <string name="guess_card_description">Menebak kartu yang ditampilkan, dengan menggunakan sistem speech recognition</string>
     <string name="search">Cari…</string>
     <string name="games">Permainan</string>
+    <string name="head">Kepala</string>
+    <string name="lips">Bibir</string>
+    <string name="nose">Hidung</string>
+    <string name="eyes">Mata</string>
 </resources>
