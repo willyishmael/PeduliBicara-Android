@@ -1,45 +1,49 @@
 package com.pedulibicara.pedulibicara.data.local
 
 import com.pedulibicara.pedulibicara.R
-import com.pedulibicara.pedulibicara.data.model.Category
+import com.pedulibicara.pedulibicara.data.model.ModuleCategory
+import com.pedulibicara.pedulibicara.data.model.MenuCategory
 import com.pedulibicara.pedulibicara.data.model.ModuleItem
 import com.pedulibicara.pedulibicara.utils.Strings
 
 object Data {
 
-    fun getModuleCategory() : List<Category> {
+    fun getModuleCategory() : List<ModuleCategory> {
         return listOf(
-            Category(
+            ModuleCategory(
                 0,
                 Strings.get(R.string.body_parts),
-                Strings.get(R.string.body_parts_description)
+                Strings.get(R.string.body_parts_description),
+                MODULE_BODY_PARTS
             ),
-            Category(
+            ModuleCategory(
                 0,
                 Strings.get(R.string.food),
-                Strings.get(R.string.food_description)
+                Strings.get(R.string.food_description),
+                MODULE_FOOD
             ),
-            Category(
+            ModuleCategory(
                 0,
                 Strings.get(R.string.animals),
-                Strings.get(R.string.animals_description)
+                Strings.get(R.string.animals_description),
+                MODULE_ANIMALS
             )
         )
     }
 
-    fun getMenuCategory() : Map<String, Category> {
+    fun getMenuCategory() : Map<String, MenuCategory> {
         return mapOf(
-            MENU_MODULE to Category(
+            MENU_MODULE to MenuCategory(
                 0,
                 Strings.get(R.string.module),
                 Strings.get(R.string.module_description)
             ),
-            MENU_GUESS_CARD to Category(
+            MENU_GUESS_CARD to MenuCategory(
                 0,
                 Strings.get(R.string.guess_card),
                 Strings.get(R.string.guess_card_description)
             ),
-            MENU_GUESS_VOICE to Category(
+            MENU_GUESS_VOICE to MenuCategory(
                 0,
                 Strings.get(R.string.guess_voice),
                 Strings.get(R.string.guess_voice_description)

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pedulibicara.pedulibicara.data.local.Data
+import com.pedulibicara.pedulibicara.data.model.ModuleCategory
 import com.pedulibicara.pedulibicara.databinding.FragmentModuleCategoryBinding
 import com.pedulibicara.pedulibicara.ui.adapter.ListCategoryAdapter
 
@@ -55,6 +56,14 @@ class ModuleCategoryFragment : Fragment() {
 
     private fun setupRecyclerView() {
         val mAdapter = ListCategoryAdapter(listCategory)
+
+        mAdapter.setOnItemClickCallback(object : ListCategoryAdapter.OnItemClickCallback{
+            override fun onItemClicked(moduleCategory: ModuleCategory) {
+
+                
+
+            }
+        })
 
         binding.rvListCategory.apply {
             layoutManager = LinearLayoutManager(activity)

@@ -5,17 +5,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.pedulibicara.pedulibicara.data.model.Category
+import com.pedulibicara.pedulibicara.data.model.ModuleCategory
 import com.pedulibicara.pedulibicara.databinding.ModuleCardViewBinding
 
 class ListCategoryAdapter(
-    private val listCategory: List<Category>
+    private val listModuleCategory: List<ModuleCategory>
 ) : RecyclerView.Adapter<ListCategoryAdapter.ViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     interface OnItemClickCallback {
-        fun onItemClicked(category: Category)
+        fun onItemClicked(moduleCategory: ModuleCategory)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -39,7 +39,7 @@ class ListCategoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val category = listCategory[position]
+        val category = listModuleCategory[position]
 
         holder.binding.apply {
             Glide.with(holder.itemView.context)
@@ -55,5 +55,5 @@ class ListCategoryAdapter(
         }
     }
 
-    override fun getItemCount(): Int = listCategory.count()
+    override fun getItemCount(): Int = listModuleCategory.count()
 }
