@@ -5,43 +5,49 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.pedulibicara.pedulibicara.data.model.ModuleCategory
 import com.pedulibicara.pedulibicara.databinding.ModuleCardViewBinding
-import com.pedulibicara.pedulibicara.model.ModuleCategory
 
 class ModuleCategoryAdapter(
-    private var listCategory: List<ModuleCategory>
-) : RecyclerView.Adapter<ModuleCategoryAdapter.ListViewHolder>() {
+    private val listModuleCategory: List<ModuleCategory>
+) : RecyclerView.Adapter<ModuleCategoryAdapter.ViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     interface OnItemClickCallback {
-        fun onItemClicked(category: ModuleCategory)
+        fun onItemClicked(moduleCategory: ModuleCategory)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
 
-    class ListViewHolder(var binding: ModuleCardViewBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(
+        var binding: ModuleCardViewBinding
+        ) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val binding = ModuleCardViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ListViewHolder(binding)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ViewHolder {
+        val binding = ModuleCardViewBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val category = listCategory[position]
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val category = listModuleCategory[position]
 
         holder.binding.apply {
-
             Glide.with(holder.itemView.context)
-                .load(category.picture)
+                .load(category.thumbnail)
                 .apply(RequestOptions().override(100, 100))
                 .into(ivModuleImage)
-
             tvModuleTitle.text = category.title
             tvModuleDescription.text = category.description
-
         }
 
         holder.itemView.setOnClickListener {
@@ -49,5 +55,5 @@ class ModuleCategoryAdapter(
         }
     }
 
-    override fun getItemCount(): Int = listCategory.count()
+    override fun getItemCount(): Int = listModuleCategory.count()
 }

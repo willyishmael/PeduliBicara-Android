@@ -22,6 +22,10 @@
         <action
             android:id="@+id/action_moduleItemFragment_to_moduleItemDetailFragment"
             app:destination="@id/moduleItemDetailFragment" />
+        <argument
+            android:name="categoryKey"
+            app:argType="string"
+            android:defaultValue="category_key" />
     </fragment>
     <fragment
         android:id="@+id/moduleItemDetailFragment"
