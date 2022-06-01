@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.pedulibicara.pedulibicara.data.model.ModuleItem
 import com.pedulibicara.pedulibicara.databinding.ModuleItemViewBinding
-import com.pedulibicara.pedulibicara.model.ModuleItem
 
 class ModuleItemAdapter(
     private val listModuleItem: List<ModuleItem>
