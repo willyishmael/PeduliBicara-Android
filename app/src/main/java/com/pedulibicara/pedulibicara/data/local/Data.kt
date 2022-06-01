@@ -1,58 +1,59 @@
 package com.pedulibicara.pedulibicara.data.local
 
 import android.content.Context
+import android.content.res.Resources
 import com.pedulibicara.pedulibicara.R
 import com.pedulibicara.pedulibicara.data.model.Category
 
 object Data {
 
+    private val resources = Resources.getSystem()
+
     fun getModuleCategory(context: Context?) : List<Category> {
-        return if (context != null) {
-            listOf(
+        resources.apply {
+            return listOf(
                 Category(
                     0,
-                    context.getString(R.string.body_parts),
-                    context.getString(R.string.body_parts_description)
+                    getString(R.string.body_parts),
+                    getString(R.string.body_parts_description)
                 ),
                 Category(
                     0,
-                    context.getString(R.string.food),
-                    context.getString(R.string.food_description)
+                    getString(R.string.food),
+                    getString(R.string.food_description)
                 ),
                 Category(
                     0,
-                    context.getString(R.string.animals),
-                    context.getString(R.string.animals_description)
+                    getString(R.string.animals),
+                    getString(R.string.animals_description)
                 )
             )
-        } else {
-            return emptyList()
         }
+
+
     }
 
-    fun getMenuCategory(context: Context?) : Map<String, Category> {
-        return if (context != null) {
-            mapOf(
+    fun getMenuCategory() : Map<String, Category> {
+        resources.apply {
+            return mapOf(
                 MENU_MODULE to Category(
                     0,
-                    context.getString(R.string.module),
-                    context.getString(R.string.module_description)
+                    getString(R.string.module),
+                    getString(R.string.module_description)
                 ),
                 MENU_GUESS_CARD to Category(
                     0,
-                    context.getString(R.string.guess_card),
-                    context.getString(R.string.guess_card_description)
+                    getString(R.string.guess_card),
+                    getString(R.string.guess_card_description)
                 ),
                 MENU_GUESS_VOICE to Category(
                     0,
-                    context.getString(R.string.guess_voice),
-                    context.getString(R.string.guess_voice_description)
+                    getString(R.string.guess_voice),
+                    getString(R.string.guess_voice_description)
                 )
             )
-        } else {
-            emptyMap()
-        }
 
+        }
     }
 
     const val MENU_MODULE = "menu_module"
