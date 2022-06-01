@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.pedulibicara.pedulibicara.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.pedulibicara.pedulibicara.data.local.Data
+import com.pedulibicara.pedulibicara.databinding.FragmentModuleCategoryBinding
+import com.pedulibicara.pedulibicara.ui.adapter.ListCategoryAdapter
 
 class ModuleCategoryFragment : Fragment() {
 
@@ -16,17 +19,46 @@ class ModuleCategoryFragment : Fragment() {
 
     private lateinit var viewModel: ModuleCategoryViewModel
 
+    private var _binding: FragmentModuleCategoryBinding? = null
+    private val binding get() = _binding!!
+
+    private val listCategory = Data.getModuleCategory(activity)
+
+    @Suppress("RedundantNullableReturnType")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_module_category, container, false)
+        _binding = FragmentModuleCategoryBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
+    @Suppress("DEPRECATION")
+    @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ModuleCategoryViewModel::class.java)
+        viewModel = ViewModelProvider(this)[ModuleCategoryViewModel::class.java]
         // TODO: Use the ViewModel
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+        val mAdapter = ListCategoryAdapter(listCategory)
+
+        binding.rvListCategory.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = mAdapter
+        }
     }
 
 }
