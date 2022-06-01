@@ -22,7 +22,7 @@ class ModuleCategoryFragment : Fragment() {
     private var _binding: FragmentModuleCategoryBinding? = null
     private val binding get() = _binding!!
 
-    private val listCategory = Data.getModuleCategory(activity)
+    private val listCategory = Data.getModuleCategory()
 
     @Suppress("RedundantNullableReturnType")
     override fun onCreateView(

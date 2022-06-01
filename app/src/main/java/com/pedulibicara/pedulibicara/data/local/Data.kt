@@ -9,7 +9,7 @@ object Data {
 
     private val resources = Resources.getSystem()
 
-    fun getModuleCategory(context: Context?) : List<Category> {
+    fun getModuleCategory() : List<Category> {
         resources.apply {
             return listOf(
                 Category(
