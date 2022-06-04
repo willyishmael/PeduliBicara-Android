@@ -68,7 +68,7 @@ object Data {
             MODULE_BODY_PARTS,
             Strings.get(R.string.head),
             0,
-            0
+            R.raw.snd_kepala
         ),
         ModuleItem(
             MODULE_BODY_PARTS,
