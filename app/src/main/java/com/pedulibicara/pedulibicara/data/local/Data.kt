@@ -5,6 +5,7 @@ import com.pedulibicara.pedulibicara.data.model.ModuleCategory
 import com.pedulibicara.pedulibicara.data.model.MenuCategory
 import com.pedulibicara.pedulibicara.data.model.ModuleItem
 import com.pedulibicara.pedulibicara.utils.Strings
+import java.util.*
 
 object Data {
 
@@ -321,8 +322,169 @@ object Data {
             name = Strings.get(R.string.papaya),
             image = R.drawable.img_papaya,
             sound = R.raw.snd_papaya
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.crocodile),
+            image = R.drawable.img_crocodile,
+            sound = R.raw.snd_crocodile
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.bird),
+            image = 0,
+            sound = R.raw.snd_bird
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.elephant),
+            image = 0,
+            sound = R.raw.snd_elephant
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.tiger),
+            image = R.drawable.img_tiger,
+            sound = R.raw.snd_tiger
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.giraffe),
+            image = R.drawable.img_giraffe,
+            sound = R.raw.snd_giraffe
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.turtle),
+            image = 0,
+            sound = R.raw.snd_turtle
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.monkey),
+            image = 0,
+            sound = R.raw.snd_monkey
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.panda),
+            image = 0,
+            sound = R.raw.snd_panda
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.penguin),
+            image = 0,
+            sound = R.raw.snd_penguin
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.deer),
+            image = 0,
+            sound = R.raw.snd_deer
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.cow),
+            image = R.drawable.img_cow,
+            sound = R.raw.snd_cow
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.lion),
+            image = 0,
+            sound = R.raw.snd_lion
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.zebra),
+            image = 0,
+            sound = R.raw.snd_zebra
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.cat),
+            image = R.drawable.img_cat,
+            sound = R.raw.snd_cat
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.dog),
+            image = R.drawable.img_dog,
+            sound = R.raw.snd_dog
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.chicken),
+            image = R.drawable.img_chicken,
+            sound = R.raw.snd_chicken
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.goat),
+            image = R.drawable.img_goat,
+            sound = R.raw.snd_goat
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.rabbit),
+            image = R.drawable.img_rabbit,
+            sound = R.raw.snd_rabbit
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.kangaroo),
+            image = R.drawable.img_kangaroo,
+            sound = R.raw.snd_kangaroo
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.mosquito),
+            image = R.drawable.img_mosquito,
+            sound = R.raw.snd_mosquito
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.ant),
+            image = R.drawable.img_ant,
+            sound = R.raw.snd_ant
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.butterfly),
+            image = R.drawable.img_butterfly,
+            sound = R.raw.snd_butterfly
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.crab),
+            image = R.drawable.img_crab,
+            sound = R.raw.snd_crab
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.fish),
+            image = R.drawable.img_fish,
+            sound = R.raw.snd_fish
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.jellyfish),
+            image = R.drawable.img_jellyfish,
+            sound = R.raw.snd_jellyfish
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.lizard),
+            image = R.drawable.img_lizard,
+            sound = R.raw.snd_lizard
+        ),
+        ModuleItem(
+            category = MODULE_ANIMALS,
+            name = Strings.get(R.string.duck),
+            image = R.drawable.img_duck,
+            sound = R.raw.snd_duck
         )
-
     )
 
     const val MENU_MODULE = "menu_module"
