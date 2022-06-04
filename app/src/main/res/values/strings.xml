@@ -33,4 +33,20 @@
     <string name="lips">Bibir</string>
     <string name="nose">Hidung</string>
     <string name="eyes">Mata</string>
+    <string name="ear">Telinga</string>
+    <string name="foot">Telapak Kaki</string>
+    <string name="hand">Tangan</string>
+    <string name="hair">Rambut</string>
+    <string name="shoulders">Pundak</string>
+    <string name="cheek">Pipi</string>
+    <string name="waist">Pinggang</string>
+    <string name="belly">Perut</string>
+    <string name="mouth">Mulut</string>
+    <string name="knee">Lutut</string>
+    <string name="tongue">Lidah</string>
+    <string name="arm">Lengan</string>
+    <string name="nail">Kuku</string>
+    <string name="leg">Kaki</string>
+    <string name="fingers">Jari</string>
+    <string name="forehead">Dahi</string>
 </resources>
