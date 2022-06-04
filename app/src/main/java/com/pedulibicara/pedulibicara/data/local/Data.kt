@@ -183,7 +183,146 @@ object Data {
             name = Strings.get(R.string.cake),
             image = R.drawable.img_cake,
             sound = R.raw.snd_cake,
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.fried_chicken),
+            image = 0,
+            sound = R.raw.snd_fried_chicken,
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.ice_cream),
+            image = R.drawable.img_ice_cream,
+            sound = R.raw.snd_ice_cream
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.cheese),
+            image = 0,
+            sound = R.raw.snd_cheese
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.rice),
+            image = R.drawable.img_rice,
+            sound = R.raw.snd_rice
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.pudding),
+            image = 0,
+            sound = R.raw.snd_pudding
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.milk),
+            image = 0,
+            sound = R.raw.snd_milk
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.sausage),
+            image = 0,
+            sound = R.raw.snd_sausage
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.lettuce),
+            image = 0,
+            sound = R.raw.snd_lettuce
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.donut),
+            image = 0,
+            sound = R.raw.snd_donut
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.bread),
+            image = 0,
+            sound = R.raw.snd_bread
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.satay),
+            image = R.drawable.img_satay,
+            sound = R.raw.snd_satay
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.mellon),
+            image = R.drawable.img_mellon,
+            sound = R.raw.snd_melon
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.banana),
+            image = R.drawable.img_banana,
+            sound = R.raw.snd_banana
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.watermelon),
+            image = R.drawable.img_watermellon,
+            sound = R.raw.snd_watermelon
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.apple),
+            image = R.drawable.img_apple,
+            sound = R.raw.snd_apple
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.pineapple),
+            image = R.drawable.img_pineapple,
+            sound = R.raw.snd_pineapple
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.orange),
+            image = R.drawable.img_orange,
+            sound = R.raw.snd_orange
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.grape),
+            image = R.drawable.img_grape,
+            sound = R.raw.snd_grape
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.mango),
+            image = R.drawable.img_mango,
+            sound = R.raw.snd_mango
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.cereal),
+            image = R.drawable.img_cereal,
+            sound = R.raw.snd_cereal
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.porridge),
+            image = R.drawable.img_poridge,
+            sound = R.raw.snd_porridge
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.egg),
+            image = R.drawable.img_egg,
+            sound = R.raw.snd_egg
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.papaya),
+            image = R.drawable.img_papaya,
+            sound = R.raw.snd_papaya
         )
+
     )
 
     const val MENU_MODULE = "menu_module"
