@@ -115,8 +115,8 @@ object Data {
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.waist),
-            image = 0,
-            sound = 0
+            image = R.drawable.img_waist,
+            sound = R.raw.snd_waist
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
@@ -177,8 +177,13 @@ object Data {
             name = Strings.get(R.string.fried_rice),
             image = R.drawable.img_fried_rice,
             sound = R.raw.snd_fried_rice
+        ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.cake),
+            image = R.drawable.img_cake,
+            sound = R.raw.snd_cake,
         )
-
     )
 
     const val MENU_MODULE = "menu_module"
