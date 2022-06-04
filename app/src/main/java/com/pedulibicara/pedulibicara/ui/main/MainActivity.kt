@@ -3,9 +3,11 @@ package com.pedulibicara.pedulibicara.ui.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.pedulibicara.pedulibicara.data.local.Data
+import com.pedulibicara.pedulibicara.data.model.MenuCategory
 import com.pedulibicara.pedulibicara.databinding.ActivityMainBinding
 import com.pedulibicara.pedulibicara.databinding.ModuleCardViewBinding
 import com.pedulibicara.pedulibicara.ui.guesscards.GuessCardsActivity
@@ -15,12 +17,17 @@ import com.pedulibicara.pedulibicara.ui.module.ModuleActivity
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val mapMenuCategory = Data.getMenuCategory()
+    private lateinit var mapMenuCategory: Map<String, MenuCategory>
+
+    private val viewModel by viewModels<MainViewModel>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        mapMenuCategory = viewModel.getMenuCategory()
 
         setupLayout()
         setupActions()

@@ -51,18 +51,6 @@ object Data {
         )
     }
 
-    fun getModuleItem(category: String) : List<ModuleItem> {
-        val listModuleItem = mutableListOf<ModuleItem>()
-
-        for (item in getAllModuleItem()) {
-            if (item.category == category) {
-                listModuleItem.add(item)
-            }
-        }
-
-        return listModuleItem
-    }
-
     fun getAllModuleItem() : List<ModuleItem> = listOf(
         ModuleItem(
             category = MODULE_BODY_PARTS,
