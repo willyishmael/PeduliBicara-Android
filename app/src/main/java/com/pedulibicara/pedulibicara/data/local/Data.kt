@@ -122,55 +122,55 @@ object Data {
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.belly),
             image = 0,
-            sound = 0
+            sound = R.raw.snd_belly
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.mouth),
-            image = 0,
-            sound = 0
+            image = R.drawable.img_mouth,
+            sound = R.raw.snd_mouth
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.knee),
             image = 0,
-            sound = 0
+            sound = R.raw.snd_knee
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.tongue),
-            image = 0,
-            sound = 0
+            image = R.drawable.img_tongue,
+            sound = R.raw.snd_tongue
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.arm),
-            image = 0,
-            sound = 0
+            image = R.drawable.img_arm,
+            sound = R.raw.snd_arm
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.nail),
-            image = 0,
-            sound = 0
+            image = R.drawable.img_nail,
+            sound = R.raw.snd_nail
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.leg),
             image = 0,
-            sound = 0
+            sound = R.raw.snd_leg
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.fingers),
-            image = 0,
-            sound = 0
+            image = R.drawable.img_fingers,
+            sound = R.raw.snd_finger
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.forehead),
-            image = 0,
-            sound = 0
+            image = R.drawable.img_forehead,
+            sound = R.raw.snd_forehead
         ),
         ModuleItem(
             category = MODULE_FOOD,
