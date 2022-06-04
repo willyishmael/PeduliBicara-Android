@@ -85,104 +85,104 @@ object Data {
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.eyes),
+            image = R.drawable.img_eye,
+            sound = R.raw.snd_eye
+        ),
+        ModuleItem(
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.ear),
+            image = R.drawable.img_ear,
+            sound = R.raw.snd_ear
+        ),
+        ModuleItem(
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.foot),
+            image = 0,
+            sound = R.raw.snd_foot
+        ),
+        ModuleItem(
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.hand),
+            image = R.drawable.img_hand,
+            sound = R.raw.snd_hand
+        ),
+        ModuleItem(
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.hair),
+            image = R.drawable.img_hair,
+            sound = R.raw.snd_hair
+        ),
+        ModuleItem(
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.shoulders),
+            image = R.drawable.img_shoulders,
+            sound = R.raw.snd_shoulders
+        ),
+        ModuleItem(
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.cheek),
             image = 0,
             sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.ear),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.waist),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.sole),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.belly),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.hand),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.mouth),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.hair),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.knee),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.shoulders),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.tongue),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.cheek),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.arm),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.waist),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.nail),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.belly),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.leg),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.mouth),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.fingers),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.knee),
-            0,
-            0
-        ),
-        ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.tongue),
-            0,
-            0
-        ),
-        ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.arm),
-            0,
-            0
-        ),
-        ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.nail),
-            0,
-            0
-        ),
-        ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.leg),
-            0,
-            0
-        ),
-        ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.fingers),
-            0,
-            0
-        ),
-        ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.forehead),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.forehead),
+            image = 0,
+            sound = 0
         ),
 
     )
