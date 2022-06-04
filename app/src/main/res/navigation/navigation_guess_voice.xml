@@ -20,11 +20,11 @@
         android:label="fragment_guess_voice_play"
         tools:layout="@layout/fragment_guess_voice_play" >
         <action
-            android:id="@+id/action_guessVoicePlayFragment_self"
-            app:destination="@id/guessVoicePlayFragment" />
-        <action
             android:id="@+id/action_guessVoicePlayFragment_to_gameResultFragment"
             app:destination="@id/gameResultFragment" />
+        <argument
+            android:name="questionCount"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/gameResultFragment"
