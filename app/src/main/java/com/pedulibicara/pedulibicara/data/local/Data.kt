@@ -11,22 +11,22 @@ object Data {
     fun getModuleCategory() : List<ModuleCategory> {
         return listOf(
             ModuleCategory(
-                0,
-                Strings.get(R.string.body_parts),
-                Strings.get(R.string.body_parts_description),
-                MODULE_BODY_PARTS
+                thumbnail = R.drawable.img_module_body_parts,
+                title = Strings.get(R.string.body_parts),
+                description = Strings.get(R.string.body_parts_description),
+                key = MODULE_BODY_PARTS
             ),
             ModuleCategory(
-                0,
-                Strings.get(R.string.food),
-                Strings.get(R.string.food_description),
-                MODULE_FOOD
+                thumbnail = R.drawable.img_module_food,
+                title = Strings.get(R.string.food),
+                description = Strings.get(R.string.food_description),
+                key = MODULE_FOOD
             ),
             ModuleCategory(
-                0,
-                Strings.get(R.string.animals),
-                Strings.get(R.string.animals_description),
-                MODULE_ANIMALS
+                thumbnail = R.drawable.img_module_animals,
+                title = Strings.get(R.string.animals),
+                description = Strings.get(R.string.animals_description),
+                key = MODULE_ANIMALS
             )
         )
     }
@@ -34,19 +34,19 @@ object Data {
     fun getMenuCategory() : Map<String, MenuCategory> {
         return mapOf(
             MENU_MODULE to MenuCategory(
-                0,
-                Strings.get(R.string.module),
-                Strings.get(R.string.module_description)
+                thumbnail = R.drawable.img_module,
+                title = Strings.get(R.string.module),
+                description = Strings.get(R.string.module_description)
             ),
             MENU_GUESS_CARD to MenuCategory(
-                0,
-                Strings.get(R.string.guess_card),
-                Strings.get(R.string.guess_card_description)
+                thumbnail = R.drawable.img_guess_card,
+                title = Strings.get(R.string.guess_card),
+                description = Strings.get(R.string.guess_card_description)
             ),
             MENU_GUESS_VOICE to MenuCategory(
-                0,
-                Strings.get(R.string.guess_voice),
-                Strings.get(R.string.guess_voice_description)
+                thumbnail = R.drawable.img_guess_voice,
+                title = Strings.get(R.string.guess_voice),
+                description = Strings.get(R.string.guess_voice_description)
             )
         )
     }
@@ -65,28 +65,28 @@ object Data {
 
     fun getAllModuleItem() : List<ModuleItem> = listOf(
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.head),
-            0,
-            R.raw.snd_kepala
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.head),
+            image = R.drawable.img_head,
+            sound = R.raw.snd_head
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.lips),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.lips),
+            image = R.drawable.img_lips,
+            sound = R.raw.snd_lips
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.nose),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.nose),
+            image = R.drawable.img_nose,
+            sound = R.raw.snd_nose
         ),
         ModuleItem(
-            MODULE_BODY_PARTS,
-            Strings.get(R.string.eyes),
-            0,
-            0
+            category = MODULE_BODY_PARTS,
+            name = Strings.get(R.string.eyes),
+            image = 0,
+            sound = 0
         ),
         ModuleItem(
             MODULE_BODY_PARTS,
@@ -190,7 +190,6 @@ object Data {
     const val MENU_MODULE = "menu_module"
     const val MENU_GUESS_CARD = "menu_guess_card"
     const val MENU_GUESS_VOICE = "menu_guess_voice"
-
     const val MODULE_BODY_PARTS = "module_body_parts"
     const val MODULE_FOOD = "module_food"
     const val MODULE_ANIMALS = "module_animals"
