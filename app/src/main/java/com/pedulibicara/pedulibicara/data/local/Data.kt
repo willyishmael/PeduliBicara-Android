@@ -63,7 +63,7 @@ object Data {
         return listModuleItem
     }
 
-    fun getAllModuleItem() = listOf(
+    fun getAllModuleItem() : List<ModuleItem> = listOf(
         ModuleItem(
             MODULE_BODY_PARTS,
             Strings.get(R.string.head),
