@@ -109,8 +109,8 @@ object Data {
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.cheek),
-            image = 0,
-            sound = 0
+            image = R.drawable.img_cheek,
+            sound = R.raw.snd_cheek
         ),
         ModuleItem(
             category = MODULE_BODY_PARTS,
@@ -172,6 +172,12 @@ object Data {
             image = 0,
             sound = 0
         ),
+        ModuleItem(
+            category = MODULE_FOOD,
+            name = Strings.get(R.string.fried_rice),
+            image = R.drawable.img_fried_rice,
+            sound = R.raw.snd_fried_rice
+        )
 
     )
 
