@@ -5,7 +5,6 @@
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.4166666666666667" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/drawable/rounded_view.xml" value="0.1365" />
-        <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/activity_guess_voice.xml" value="0.209375" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/activity_module.xml" value="0.209375" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/fragment_guess_cards_play.xml" value="0.209375" />
@@ -17,6 +16,8 @@
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/modul_card_view.xml" value="0.75" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/module_card_view.xml" value="0.19444444444444445" />
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/module_item_view.xml" value="0.209375" />
+        <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/activity_auth.xml" value="0.209375" />
+        <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/fragment_module_item_detail.xml" value="0.22" />
         <entry key="app/src/main/res/drawable/rounded_view.xml" value="0.4855" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_guess_cards.xml" value="0.5911458333333334" />

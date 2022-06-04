@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.pedulibicara.pedulibicara.R
 import com.pedulibicara.pedulibicara.data.local.Data
@@ -58,6 +59,16 @@ class ModuleItemFragment : Fragment() {
         listModuleItem = Data.getModuleItem(categoryKey)
 
         val mAdapter = ModuleItemAdapter(listModuleItem)
+
+        mAdapter.setOnItemClickCallback(object : ModuleItemAdapter.OnItemClickCallback {
+            override fun onItemClicked(item: ModuleItem) {
+
+                val destination = ModuleItemFragmentDirections
+                    .actionModuleItemFragmentToModuleItemDetailFragment(item)
+                findNavController().navigate(destination)
+
+            }
+        })
 
         binding.rvModuleItem.apply {
             layoutManager = GridLayoutManager(context, 2)

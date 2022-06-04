@@ -31,5 +31,9 @@
         android:id="@+id/moduleItemDetailFragment"
         android:name="com.pedulibicara.pedulibicara.ui.module.ModuleItemDetailFragment"
         android:label="fragment_module_item_detail"
-        tools:layout="@layout/fragment_module_item_detail" />
+        tools:layout="@layout/fragment_module_item_detail" >
+        <argument
+            android:name="moduleItem"
+            app:argType="com.pedulibicara.pedulibicara.data.model.ModuleItem" />
+    </fragment>
 </navigation>
