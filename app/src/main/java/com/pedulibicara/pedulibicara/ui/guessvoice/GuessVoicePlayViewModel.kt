@@ -2,17 +2,11 @@ package com.pedulibicara.pedulibicara.ui.guessvoice
 
 import androidx.lifecycle.ViewModel
 import com.pedulibicara.pedulibicara.data.model.ModuleItem
+import com.pedulibicara.pedulibicara.data.model.Question
 import com.pedulibicara.pedulibicara.data.repository.DataRepository
 import kotlin.random.Random
 
 class GuessVoicePlayViewModel : ViewModel() {
-
-    data class Question(
-        var answer: ModuleItem,
-        var option1: ModuleItem,
-        var option2: ModuleItem,
-        var option3: ModuleItem,
-    )
 
     private val repository = DataRepository()
     private fun getAllModuleItem() = repository.getAllModuleItem()

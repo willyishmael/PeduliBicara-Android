@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.pedulibicara.pedulibicara.data.model.Question
 import com.pedulibicara.pedulibicara.databinding.FragmentGuessVoicePlayBinding
 
 class GuessVoicePlayFragment : Fragment() {
@@ -14,7 +15,7 @@ class GuessVoicePlayFragment : Fragment() {
     private var _binding: FragmentGuessVoicePlayBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var questions: List<GuessVoicePlayViewModel.Question>
+    private lateinit var questions: List<Question>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
