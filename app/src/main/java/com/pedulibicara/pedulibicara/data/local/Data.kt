@@ -1,13 +1,26 @@
 package com.pedulibicara.pedulibicara.data.local
 
 import com.pedulibicara.pedulibicara.R
+import com.pedulibicara.pedulibicara.data.model.Gender
 import com.pedulibicara.pedulibicara.data.model.ModuleCategory
 import com.pedulibicara.pedulibicara.data.model.MenuCategory
 import com.pedulibicara.pedulibicara.data.model.ModuleItem
 import com.pedulibicara.pedulibicara.utils.Strings
-import java.util.*
 
 object Data {
+
+    fun getGender() : List<Gender> {
+        return listOf(
+            Gender(
+                Strings.get(R.string.boy),
+                R.drawable.img_boy
+            ),
+            Gender(
+                Strings.get(R.string.girl),
+                R.drawable.img_girl
+            )
+        )
+    }
 
     fun getModuleCategory() : List<ModuleCategory> {
         return listOf(

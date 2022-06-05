@@ -1,7 +1,9 @@
 package com.pedulibicara.pedulibicara.ui.auth
 
 import androidx.lifecycle.ViewModel
+import com.pedulibicara.pedulibicara.data.repository.DataRepository
 
 class PickGenderViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    private val repository = DataRepository()
+    fun getGender() = repository.getGender()
 }

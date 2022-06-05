@@ -21,4 +21,6 @@ class DataRepository {
         return listModuleItem
     }
 
+    fun getGender() = Data.getGender()
+
 }

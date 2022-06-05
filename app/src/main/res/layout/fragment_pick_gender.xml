@@ -19,6 +19,7 @@
         android:baselineAligned="false">
 
         <include
+            android:id="@+id/gv_boy"
             layout="@layout/gender_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,6 +27,7 @@
             android:layout_weight="1" />
 
         <include
+            android:id="@+id/gv_girl"
             layout="@layout/gender_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

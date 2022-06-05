@@ -102,4 +102,6 @@
     <string name="jellyfish">Ubur-ubur</string>
     <string name="lizard">Cicak</string>
     <string name="duck">Bebek</string>
+    <string name="boy">Laki-laki</string>
+    <string name="girl">Perempuan</string>
 </resources>
