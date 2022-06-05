@@ -5,4 +5,5 @@ data class Question(
     var option1: ModuleItem,
     var option2: ModuleItem,
     var option3: ModuleItem,
+    var indexPattern: List<Int>
 )

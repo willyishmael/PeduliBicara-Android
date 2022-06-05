@@ -19,6 +19,7 @@
         app:rowCount="2">
 
         <include
+            android:id="@+id/mi_option_0"
             layout="@layout/module_item_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,16 +27,19 @@
             android:layout_marginBottom="16dp" />
 
         <include
+            android:id="@+id/mi_option_1"
             layout="@layout/module_item_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <include
+            android:id="@+id/mi_option_2"
             layout="@layout/module_item_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <include
+            android:id="@+id/mi_option_3"
             layout="@layout/module_item_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -52,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/gridLayout2" />
 
     <ImageButton
-        android:id="@+id/btn_record2"
+        android:id="@+id/btn_play_sound"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="32dp"
