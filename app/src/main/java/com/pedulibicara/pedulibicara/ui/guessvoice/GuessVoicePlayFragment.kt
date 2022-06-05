@@ -1,5 +1,6 @@
 package com.pedulibicara.pedulibicara.ui.guessvoice
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ class GuessVoicePlayFragment : Fragment() {
     private var _binding: FragmentGuessVoicePlayBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var mediaPlayer: MediaPlayer
     private lateinit var questions: List<Question>
     private var questionsCount: Int = 0
     private var currentQuestionPosition = 0
@@ -57,7 +59,6 @@ class GuessVoicePlayFragment : Fragment() {
 
     private fun nextQuestion() {
         val question = questions[currentQuestionPosition]
-
         val listOptions = viewModel.applyQuestionIntoPattern(question)
 
         binding.apply {
@@ -65,6 +66,7 @@ class GuessVoicePlayFragment : Fragment() {
             setImage(listOptions[1].image, miOption1.ivItemImage)
             setImage(listOptions[2].image, miOption2.ivItemImage)
             setImage(listOptions[3].image, miOption3.ivItemImage)
+            mediaPlayer = MediaPlayer.create(context, question.answer.sound)
         }
     }
 
@@ -90,7 +92,10 @@ class GuessVoicePlayFragment : Fragment() {
 
             }
             btnPlaySound.setOnClickListener {
-
+                if (mediaPlayer.isPlaying) {
+                    mediaPlayer.stop()
+                }
+                mediaPlayer.start()
             }
         }
     }
