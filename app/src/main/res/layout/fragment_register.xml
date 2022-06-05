@@ -10,10 +10,21 @@
     style="@style/background"
     tools:context=".ui.auth.RegisterFragment">
 
+    <ImageView
+        android:id="@+id/iv_logo2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="16dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_parents_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
