@@ -22,4 +22,10 @@
     <style name="background">
         <item name="android:background">@color/off_white</item>
     </style>
+
+    <style name="textButton">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
 </resources>
