@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -56,26 +57,22 @@ class GuessVoicePlayFragment : Fragment() {
 
     private fun nextQuestion() {
         val question = questions[currentQuestionPosition]
+
         val listOptions = viewModel.applyQuestionIntoPattern(question)
 
         binding.apply {
-            Glide.with(requireActivity())
-                .load(listOptions[0])
-                .apply(RequestOptions().override(100))
-                .into(miOption0.ivItemImage)
-            Glide.with(requireActivity())
-                .load(listOptions[1])
-                .apply(RequestOptions().override(100))
-                .into(miOption1.ivItemImage)
-            Glide.with(requireActivity())
-                .load(listOptions[2])
-                .apply(RequestOptions().override(100))
-                .into(miOption2.ivItemImage)
-            Glide.with(requireActivity())
-                .load(listOptions[3])
-                .apply(RequestOptions().override(100))
-                .into(miOption3.ivItemImage)
+            setImage(listOptions[0].image, miOption0.ivItemImage)
+            setImage(listOptions[1].image, miOption1.ivItemImage)
+            setImage(listOptions[2].image, miOption2.ivItemImage)
+            setImage(listOptions[3].image, miOption3.ivItemImage)
         }
+    }
+
+    private fun setImage(image: Int, view: ImageView) {
+        Glide.with(requireActivity())
+            .load(image)
+            .apply(RequestOptions().override(100))
+            .into(view)
     }
 
     private fun setupButtons() {
