@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.pedulibicara.pedulibicara.data.model.Question
@@ -65,18 +66,23 @@ class GuessVoicePlayFragment : Fragment() {
     }
 
     private fun nextQuestion() {
-        val question = questions[currentQuestionPosition]
-        val listOptions = viewModel.applyQuestionIntoPattern(question)
+        if (currentQuestionPosition < questionsCount) {
+            val question = questions[currentQuestionPosition]
+            val listOptions = viewModel.applyQuestionIntoPattern(question)
 
-        binding.apply {
-            setImage(listOptions[0].image, miOption0.ivItemImage)
-            setImage(listOptions[1].image, miOption1.ivItemImage)
-            setImage(listOptions[2].image, miOption2.ivItemImage)
-            setImage(listOptions[3].image, miOption3.ivItemImage)
-            soundId = soundPool!!.load(context, question.answer.sound, 1)
+            binding.apply {
+                setImage(listOptions[0].image, miOption0.ivItemImage)
+                setImage(listOptions[1].image, miOption1.ivItemImage)
+                setImage(listOptions[2].image, miOption2.ivItemImage)
+                setImage(listOptions[3].image, miOption3.ivItemImage)
+                soundId = soundPool!!.load(context, question.answer.sound, 1)
+            }
+
+            currentAnswerPosition = question.indexPattern[0]
+            currentQuestionPosition += 1
+        } else {
+            gameFinished()
         }
-
-        currentQuestionPosition += 1
     }
 
     private fun setImage(image: Int, view: ImageView) {
@@ -100,15 +106,19 @@ class GuessVoicePlayFragment : Fragment() {
     private fun setupButtons() {
         binding.apply {
             miOption0.miContainer.setOnClickListener {
+                checkAnswer(0)
                 nextQuestion()
             }
             miOption1.miContainer.setOnClickListener {
+                checkAnswer(1)
                 nextQuestion()
             }
             miOption2.miContainer.setOnClickListener {
+                checkAnswer(2)
                 nextQuestion()
             }
             miOption3.miContainer.setOnClickListener {
+                checkAnswer(3)
                 nextQuestion()
             }
             btnPlaySound.setOnClickListener {
@@ -120,7 +130,21 @@ class GuessVoicePlayFragment : Fragment() {
         }
     }
 
-    private fun checkAnswer() {
+    private fun checkAnswer(clickedButton: Int) {
+        if (clickedButton == currentAnswerPosition) {
+            viewModel.addScore()
+        }
+        Log.d("checkAnswer()","score = ${viewModel.getFinalScore()}")
+    }
 
+    private fun gameFinished() {
+        GuessVoicePlayFragmentDirections
+            .actionGuessVoicePlayFragmentToGameResultFragment()
+            .apply {
+                questionCount = viewModel.getQuestionCount()
+                rightAnswer = viewModel.getRightAnswer()
+                finalScore = viewModel.getFinalScore()
+                findNavController().navigate(this)
+            }
     }
 }

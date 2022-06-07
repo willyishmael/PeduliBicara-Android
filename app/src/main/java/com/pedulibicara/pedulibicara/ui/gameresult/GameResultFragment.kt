@@ -1,32 +1,49 @@
 package com.pedulibicara.pedulibicara.ui.gameresult
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.pedulibicara.pedulibicara.R
+import com.pedulibicara.pedulibicara.databinding.FragmentGameResultBinding
 
 class GameResultFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = GameResultFragment()
-    }
+    private var _binding: FragmentGameResultBinding? = null
+    private val binding get() = _binding!!
 
-    private lateinit var viewModel: GameResultViewModel
+    private var questionCount = 0f
+    private var rightAnswer = 0f
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_game_result, container, false)
+    ): View {
+        _binding = FragmentGameResultBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(GameResultViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        getNavArguments()
+
+    }
+
+    private fun getNavArguments() {
+        val args = GameResultFragmentArgs.fromBundle(arguments as Bundle)
+        questionCount = args.questionCount
+        rightAnswer = args.rightAnswer
+    }
+
+    private fun setupContent() {
+        binding.apply {
+
+        }
+    }
 }
