@@ -1,7 +1,9 @@
 package com.pedulibicara.pedulibicara.ui.guessvoice
 
-import android.media.MediaPlayer
+import android.media.AudioAttributes
+import android.media.SoundPool
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,10 +21,12 @@ class GuessVoicePlayFragment : Fragment() {
     private var _binding: FragmentGuessVoicePlayBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var mediaPlayer: MediaPlayer
+    private var soundPool: SoundPool? = null
     private lateinit var questions: List<Question>
     private var questionsCount: Int = 0
     private var currentQuestionPosition = 0
+    private var currentAnswerPosition = 0
+    private var soundId = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +39,8 @@ class GuessVoicePlayFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        soundPool?.release()
+        soundPool = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,6 +52,7 @@ class GuessVoicePlayFragment : Fragment() {
 
         prepareQuestion(questionsCount)
         setupButtons()
+        setupSoundPool()
         displayQuestion()
     }
 
@@ -66,8 +73,10 @@ class GuessVoicePlayFragment : Fragment() {
             setImage(listOptions[1].image, miOption1.ivItemImage)
             setImage(listOptions[2].image, miOption2.ivItemImage)
             setImage(listOptions[3].image, miOption3.ivItemImage)
-            mediaPlayer = MediaPlayer.create(context, question.answer.sound)
+            soundId = soundPool!!.load(context, question.answer.sound, 1)
         }
+
+        currentQuestionPosition += 1
     }
 
     private fun setImage(image: Int, view: ImageView) {
@@ -77,26 +86,41 @@ class GuessVoicePlayFragment : Fragment() {
             .into(view)
     }
 
+    private fun setupSoundPool() {
+        val audioAttributes = AudioAttributes.Builder()
+            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+            .setUsage(AudioAttributes.USAGE_GAME)
+            .build()
+
+        soundPool = SoundPool.Builder()
+            .setAudioAttributes(audioAttributes)
+            .build()
+    }
+
     private fun setupButtons() {
         binding.apply {
             miOption0.miContainer.setOnClickListener {
-
+                nextQuestion()
             }
             miOption1.miContainer.setOnClickListener {
-
+                nextQuestion()
             }
             miOption2.miContainer.setOnClickListener {
-
+                nextQuestion()
             }
             miOption3.miContainer.setOnClickListener {
-
+                nextQuestion()
             }
             btnPlaySound.setOnClickListener {
-                if (mediaPlayer.isPlaying) {
-                    mediaPlayer.stop()
-                }
-                mediaPlayer.start()
+                Log.d("debug", "soundPool = $soundPool")
+                Log.d("debug", "soundId = $soundId")
+
+                soundPool?.play(soundId,1f,1f,1,0, 1f)
             }
         }
+    }
+
+    private fun checkAnswer() {
+
     }
 }
