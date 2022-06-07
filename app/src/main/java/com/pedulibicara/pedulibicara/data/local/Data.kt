@@ -213,7 +213,7 @@ object Data {
         ModuleItem(
             category = MODULE_FOOD,
             name = Strings.get(R.string.cheese),
-            image = 0,
+            image = R.drawable.img_chesee,
             sound = R.raw.snd_cheese
         ),
         ModuleItem(
