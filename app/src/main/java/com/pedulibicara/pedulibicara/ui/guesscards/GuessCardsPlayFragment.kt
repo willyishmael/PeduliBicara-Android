@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
 import com.pedulibicara.pedulibicara.data.model.ModuleItem
 import com.pedulibicara.pedulibicara.databinding.FragmentGuessCardsPlayBinding
 
@@ -40,7 +41,13 @@ class GuessCardsPlayFragment : Fragment() {
     }
 
     private fun setupView() {
+        Glide.with(requireContext())
+            .load(question.image)
+            .into(binding.ivCardImage)
 
+        binding.btnRecord.setOnClickListener {
+            nextQuestion()
+        }
     }
 
     private fun nextQuestion() {
