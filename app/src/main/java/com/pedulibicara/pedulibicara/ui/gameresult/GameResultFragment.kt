@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.pedulibicara.pedulibicara.R
@@ -63,9 +63,7 @@ class GameResultFragment : Fragment() {
 
     private fun setupButton() {
         binding.btnMainMenu.setOnClickListener {
-            GameResultFragmentDirections.actionGameResultFragmentToMainActivity2().apply {
-                findNavController().navigate(this)
-            }
+            Navigation.createNavigateOnClickListener(R.id.action_gameResultFragment_to_mainActivity2)
             activity?.finish()
         }
     }
