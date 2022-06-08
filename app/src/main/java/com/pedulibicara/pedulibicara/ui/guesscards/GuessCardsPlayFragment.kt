@@ -1,14 +1,24 @@
 package com.pedulibicara.pedulibicara.ui.guesscards
 
+import android.Manifest
+import android.content.ContextWrapper
+import android.content.pm.PackageManager
+import android.media.MediaRecorder
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.pedulibicara.pedulibicara.data.model.ModuleItem
 import com.pedulibicara.pedulibicara.databinding.FragmentGuessCardsPlayBinding
+import java.io.File
 
 class GuessCardsPlayFragment : Fragment() {
 
@@ -18,6 +28,7 @@ class GuessCardsPlayFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var question: ModuleItem
+    private var mediaRecorder: MediaRecorder? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +45,8 @@ class GuessCardsPlayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (isMicrophoneAvailable()) getMicrophonePermission()
 
         viewModel.generateQuestions()
         question = viewModel.getQuestion()
@@ -54,6 +67,57 @@ class GuessCardsPlayFragment : Fragment() {
         viewModel.nextQuestion()
         question = viewModel.getQuestion()
         setupView()
+    }
+
+    private fun isMicrophoneAvailable() : Boolean {
+        return requireActivity().packageManager.hasSystemFeature(PackageManager.FEATURE_MICROPHONE)
+    }
+
+    private fun getMicrophonePermission() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_DENIED) {
+            val permission = arrayOf(Manifest.permission.RECORD_AUDIO)
+            ActivityCompat.requestPermissions(requireActivity(), permission, MICROPHONE_PERMISSION_CODE)
+        }
+    }
+
+    @Suppress("DEPRECATION")
+    private fun recordAudio() {
+        try {
+            mediaRecorder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                MediaRecorder(requireContext())
+            } else MediaRecorder()
+            mediaRecorder?.apply {
+                setAudioSource(MediaRecorder.AudioSource.MIC)
+                setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
+                setOutputFile(getRecordingFilePath())
+                setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
+                prepare()
+                start()
+                Toast.makeText(requireContext(), "Recording is started", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun stopRecordAudio() {
+        mediaRecorder?.apply {
+            stop()
+            release()
+        }
+        mediaRecorder = null
+        Toast.makeText(requireContext(), "Recording is stopped", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun getRecordingFilePath(): String {
+        val contextWrapper = ContextWrapper(requireContext().applicationContext)
+        val musicDirectory = contextWrapper.getExternalFilesDir(Environment.DIRECTORY_MUSIC)
+        val file = File(musicDirectory, "recordingFile.mp3")
+        return file.path
+    }
+
+    companion object {
+        private const val MICROPHONE_PERMISSION_CODE = 200
     }
 
 }
