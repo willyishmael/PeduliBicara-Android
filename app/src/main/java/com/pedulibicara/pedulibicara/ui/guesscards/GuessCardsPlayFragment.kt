@@ -1,32 +1,37 @@
 package com.pedulibicara.pedulibicara.ui.guesscards
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.pedulibicara.pedulibicara.R
+import androidx.fragment.app.viewModels
+import com.pedulibicara.pedulibicara.databinding.FragmentGuessCardsPlayBinding
 
 class GuessCardsPlayFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = GuessCardsPlayFragment()
-    }
+    private val viewModel by viewModels<GuessCardsPlayViewModel>()
 
-    private lateinit var viewModel: GuessCardsPlayViewModel
+    private var _binding: FragmentGuessCardsPlayBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_guess_cards_play, container, false)
+    ): View {
+        _binding = FragmentGuessCardsPlayBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(GuessCardsPlayViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        
     }
 
 }
