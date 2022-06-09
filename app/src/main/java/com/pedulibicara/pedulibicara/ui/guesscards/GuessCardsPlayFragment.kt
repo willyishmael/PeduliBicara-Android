@@ -7,15 +7,17 @@ import android.media.MediaRecorder
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
+import com.devlomi.record_view.OnRecordListener
 import com.pedulibicara.pedulibicara.data.model.ModuleItem
 import com.pedulibicara.pedulibicara.databinding.FragmentGuessCardsPlayBinding
 import java.io.File
@@ -58,8 +60,32 @@ class GuessCardsPlayFragment : Fragment() {
             .load(question.image)
             .into(binding.ivCardImage)
 
-        binding.btnRecord.setOnClickListener {
-            nextQuestion()
+        setupRecordView()
+    }
+
+    private fun setupRecordView() {
+        binding.apply {
+            recordButton.setRecordView(recordView)
+            recordView.setOnRecordListener(object : OnRecordListener {
+                override fun onStart() {
+                    Log.d("RecordView", "onStart")
+                }
+
+                override fun onCancel() {
+                    Log.d("RecordView", "onCancel")
+                }
+
+                override fun onFinish(recordTime: Long, limitReached: Boolean) {
+                    val time: String = recordTime.toString()
+                    Log.d("RecordView", "onFinish")
+                    Log.d("RecordTime", time)
+                }
+
+                override fun onLessThanSecond() {
+                    Log.d("RecordView", "onLessThanSecond")
+                }
+
+            })
         }
     }
 

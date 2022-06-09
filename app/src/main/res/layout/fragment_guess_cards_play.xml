@@ -12,9 +12,8 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_view"
-        app:layout_constraintBottom_toTopOf="@+id/btn_record"
+        app:layout_constraintBottom_toTopOf="@+id/parent_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -36,16 +35,43 @@
             tools:src="@drawable/img_lizard" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/btn_record"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/rounded_view"
-        android:src="@drawable/ic_baseline_mic_24"
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.devlomi.record_view.RecordView
+            android:id="@+id/record_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/record_button"
+            app:counter_time_color="#ff0000"
+            app:slide_to_cancel_arrow="@drawable/recv_ic_arrow"
+            app:slide_to_cancel_arrow_color="#000000"
+            app:slide_to_cancel_bounds="8dp"
+            app:slide_to_cancel_margin_right="10dp"
+            app:slide_to_cancel_text="Slide To Cancel" />
+
+        <com.devlomi.record_view.RecordButton
+            android:id="@+id/record_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/recv_bg_mic"
+            android:scaleType="centerInside"
+            app:mic_icon="@drawable/recv_ic_mic_white" />
+
+
+    </RelativeLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
