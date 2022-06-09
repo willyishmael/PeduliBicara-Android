@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pedulibicara.pedulibicara.data.model.ModuleCategory
 import com.pedulibicara.pedulibicara.databinding.FragmentModuleCategoryBinding
 import com.pedulibicara.pedulibicara.ui.adapter.ModuleCategoryAdapter
+import androidx.appcompat.app.AppCompatActivity
 
 class ModuleCategoryFragment : Fragment() {
 
@@ -35,7 +36,7 @@ class ModuleCategoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        (activity as AppCompatActivity).supportActionBar?.title = "Module"
         listCategory = viewModel.getModuleCategory()
 
         setupRecyclerView()
