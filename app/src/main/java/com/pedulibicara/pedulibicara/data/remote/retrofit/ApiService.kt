@@ -1,6 +1,7 @@
 package com.pedulibicara.pedulibicara.data.remote.retrofit
 
-import com.pedulibicara.pedulibicara.data.remote.response.Response
+import com.pedulibicara.pedulibicara.data.remote.response.AuthResponse
+import com.pedulibicara.pedulibicara.data.remote.response.ModelResponse
 import okhttp3.MultipartBody
 import retrofit2.http.*
 
@@ -19,7 +20,7 @@ interface ApiService {
     suspend fun login(
         @Field("email") email: String,
         @Field("password") password: String
-    ): Response
+    ): AuthResponse
 
     /**
      * Call the API to handle registration to create new account
@@ -36,7 +37,7 @@ interface ApiService {
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String
-    ): Response
+    ): AuthResponse
 
     /**
      * Call the API to handle voice prediction
@@ -47,6 +48,6 @@ interface ApiService {
     @POST("model")
     suspend fun  predict(
         @Part("file") file: MultipartBody.Part
-    ): Response
+    ): ModelResponse
 
 }
