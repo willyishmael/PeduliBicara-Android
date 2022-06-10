@@ -7,8 +7,6 @@ import retrofit2.http.*
 
 interface ApiService {
 
-    // Responses will be fix later
-
     /**
      * Call the API to handle login
      *
