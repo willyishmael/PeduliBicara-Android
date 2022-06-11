@@ -72,4 +72,5 @@ dependencies {
 
     implementation 'io.github.ShawnLin013:number-picker:2.4.13'
     implementation 'com.github.3llomi:RecordView:3.1.1'
+    implementation 'com.github.bhargavms:DotLoader:1.1.1'
 }

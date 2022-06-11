@@ -13,5 +13,13 @@
     <color name="red_02">#FFFB8C9A</color>
     <color name="blue_01">#FF6884F3</color>
     <color name="blue_02">#FF53DAFC</color>
+    
+    <array name="dot_colors">
+        <item>#FFB073ED</item>
+        <item>#FF74AA91</item>
+        <item>#FFDF9544</item>
+        <item>#FFF35453</item>
+        <item>#FF6884F3</item>
+    </array>
 
 </resources>
