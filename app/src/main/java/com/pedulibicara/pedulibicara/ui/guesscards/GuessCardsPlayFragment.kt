@@ -53,14 +53,13 @@ class GuessCardsPlayFragment : Fragment() {
         viewModel.generateQuestions()
         question = viewModel.getQuestion()
         setupView()
+        setupRecordView()
     }
 
     private fun setupView() {
         Glide.with(requireContext())
             .load(question.image)
             .into(binding.ivCardImage)
-
-        setupRecordView()
     }
 
     private fun setupRecordView() {
@@ -68,17 +67,25 @@ class GuessCardsPlayFragment : Fragment() {
             recordButton.setRecordView(recordView)
             recordView.setOnRecordListener(object : OnRecordListener {
                 override fun onStart() {
-                    Log.d("RecordView", "onStart")
+                    recordAudio()
                 }
 
                 override fun onCancel() {
-                    Log.d("RecordView", "onCancel")
+                    stopRecordAudio()
                 }
 
                 override fun onFinish(recordTime: Long, limitReached: Boolean) {
-                    val time: String = recordTime.toString()
-                    Log.d("RecordView", "onFinish")
-                    Log.d("RecordTime", time)
+                    stopRecordAudio()
+
+                    val file = File(getRecordingFilePath())
+
+                    CheckAnswerDialog(
+                        viewModel,
+                        file,
+                        onDialogFinished = {
+                            nextQuestion()
+                        }
+                    ).show(parentFragmentManager, DIALOG_TAG)
                 }
 
                 override fun onLessThanSecond() {
@@ -144,6 +151,7 @@ class GuessCardsPlayFragment : Fragment() {
 
     companion object {
         private const val MICROPHONE_PERMISSION_CODE = 200
+        private const val DIALOG_TAG = "checkAnswerDialog"
     }
 
 }
