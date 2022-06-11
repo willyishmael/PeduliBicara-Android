@@ -79,13 +79,10 @@ class GuessCardsPlayFragment : Fragment() {
 
                     val file = File(getRecordingFilePath())
 
-                    CheckAnswerDialog(
-                        viewModel,
-                        file,
-                        onDialogFinished = {
-                            nextQuestion()
-                        }
-                    ).show(parentFragmentManager, DIALOG_TAG)
+                    CheckAnswerDialog(viewModel, file) {
+                        nextQuestion()
+                    }.show(parentFragmentManager, DIALOG_TAG)
+
                 }
 
                 override fun onLessThanSecond() {

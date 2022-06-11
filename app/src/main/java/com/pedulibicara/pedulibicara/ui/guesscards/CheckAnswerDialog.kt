@@ -1,9 +1,9 @@
 package com.pedulibicara.pedulibicara.ui.guesscards
 
-import android.app.AlertDialog
-import android.app.Dialog
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -23,13 +23,21 @@ class CheckAnswerDialog(
     private val onDialogFinished: () -> Unit
 ): DialogFragment() {
 
-    private lateinit var binding: DialogCheckAnswerBinding
+    private var _binding: DialogCheckAnswerBinding? = null
+    private val binding get() = _binding!!
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        binding = DialogCheckAnswerBinding.inflate(layoutInflater)
-        val builder = AlertDialog.Builder(requireActivity())
-        builder.setView(binding.root)
-        return builder.create()
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = DialogCheckAnswerBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,8 +54,8 @@ class CheckAnswerDialog(
         setLoading(true)
         lifecycleScope.launchWhenStarted {
             launch {
-                val requestAudioFile =file.asRequestBody("audio/wav".toMediaTypeOrNull())
-                val audioMultipart:MultipartBody.Part =MultipartBody.Part.createFormData(
+                val requestAudioFile = file.asRequestBody("audio/wav".toMediaTypeOrNull())
+                val audioMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
                     "audio",
                     file.name,
                     requestAudioFile
@@ -60,7 +68,7 @@ class CheckAnswerDialog(
                             val isAnswerCorrect = viewModel.checkAnswer(it.result)
                             setDialogImage(isAnswerCorrect)
                             delay(DIALOG_DELAY)
-                            onDialogFinished()
+                            onDialogFinished
                             dismiss()
                         }
                         response.onFailure {
