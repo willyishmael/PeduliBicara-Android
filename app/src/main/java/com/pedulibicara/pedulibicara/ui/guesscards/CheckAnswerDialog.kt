@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.pedulibicara.pedulibicara.R
 import com.pedulibicara.pedulibicara.databinding.DialogCheckAnswerBinding
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -37,6 +38,10 @@ class CheckAnswerDialog(
         uploadFile()
     }
 
+    /**
+     * Upload audio file to predict
+     *
+     */
     private fun uploadFile() {
         setLoading(true)
         lifecycleScope.launchWhenStarted {
@@ -52,9 +57,15 @@ class CheckAnswerDialog(
                     .collect { response ->
                         response.onSuccess {
                             setLoading(false)
+                            val isAnswerCorrect = viewModel.checkAnswer(it.result)
+                            setDialogImage(isAnswerCorrect)
+                            delay(DIALOG_DELAY)
+                            onDialogFinished()
+                            dismiss()
                         }
                         response.onFailure {
                             setLoading(false)
+                            it.printStackTrace()
                         }
                     }
             }
@@ -80,5 +91,9 @@ class CheckAnswerDialog(
         Glide.with(requireActivity())
             .load(if (isAnswerCorrect) R.drawable.img_succeed else R.drawable.img_fail)
             .into(binding.ivDialogImage)
+    }
+
+    companion object {
+        const val DIALOG_DELAY = 3000L
     }
 }
