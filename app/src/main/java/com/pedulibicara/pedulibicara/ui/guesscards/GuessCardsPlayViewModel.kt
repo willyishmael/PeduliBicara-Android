@@ -13,13 +13,15 @@ class GuessCardsPlayViewModel : ViewModel() {
     private val dataRepository = DataRepository()
     private val modelRepository = ModelRepository()
 
-    private fun getAllModuleItems() = dataRepository.getAllModuleItem()
-    private fun getModuleItems(category: String) = dataRepository.getModuleItems(category)
-
     private lateinit var questions : List<ModuleItem>
     private var currentQuestionPosition = 0
-    fun getCurrentQuestionPosition() = currentQuestionPosition
+    private var score = 0
 
+    /**
+     * Get all ModuleItems from local data
+     * @return List<ModuleItem>
+     */
+    private fun getAllModuleItems() = dataRepository.getAllModuleItem()
 
     /**
      * Generate random list of ModuleItem
@@ -72,6 +74,20 @@ class GuessCardsPlayViewModel : ViewModel() {
     suspend fun predictVoice(
         file: MultipartBody.Part
     ): Flow<Result<ModelResponse>> = modelRepository.predict(file)
+
+    /**
+     * Check result from voice predict model,
+     * will return true if equals to current ModuleItem name
+     * @param result String
+     * @return Boolean
+     */
+    fun checkAnswer(result: String): Boolean {
+        val rightAnswer = questions[currentQuestionPosition].name
+        return if (result == rightAnswer) {
+            score += 1
+            true
+        } else false
+    }
 
     companion object {
         const val QUESTION_COUNT = 5
