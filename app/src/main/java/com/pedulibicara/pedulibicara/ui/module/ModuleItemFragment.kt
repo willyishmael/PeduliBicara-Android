@@ -37,10 +37,12 @@ class ModuleItemFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar?.title = "Module"
+
+
         val categoryKey = ModuleItemFragmentArgs.fromBundle(arguments as Bundle).categoryKey
         listModuleItem = viewModel.getModuleItems(categoryKey)
-
+        (activity as AppCompatActivity).supportActionBar?.title = categoryKey
+//        binding.titleToolbar.text = categoryKey
         setupRecyclerView()
     }
 

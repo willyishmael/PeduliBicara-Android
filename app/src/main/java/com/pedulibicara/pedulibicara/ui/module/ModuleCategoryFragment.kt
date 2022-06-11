@@ -1,17 +1,17 @@
 package com.pedulibicara.pedulibicara.ui.module
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pedulibicara.pedulibicara.data.model.ModuleCategory
 import com.pedulibicara.pedulibicara.databinding.FragmentModuleCategoryBinding
 import com.pedulibicara.pedulibicara.ui.adapter.ModuleCategoryAdapter
-import androidx.appcompat.app.AppCompatActivity
 
 class ModuleCategoryFragment : Fragment() {
 
@@ -36,8 +36,15 @@ class ModuleCategoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar?.title = "Module"
+
         listCategory = viewModel.getModuleCategory()
+
+//        AppCompatActivity().setSupportActionBar(binding.toolbar)
+//        AppCompatActivity().supportActionBar!!.setDisplayShowTitleEnabled(false)
+
+        (activity as AppCompatActivity?)!!.setSupportActionBar(binding.toolbar)
+
+//        (activity as AppCompatActivity).supportActionBar?.title = "Module"
 
         setupRecyclerView()
     }

@@ -40,6 +40,8 @@ class ModuleItemDetailFragment : Fragment() {
         val moduleItem = ModuleItemDetailFragmentArgs
             .fromBundle(arguments as Bundle)
             .moduleItem
+//        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+//        binding.titleToolbar.text = moduleItem.name
         (activity as AppCompatActivity).supportActionBar?.title = moduleItem.name
 
         binding.apply {

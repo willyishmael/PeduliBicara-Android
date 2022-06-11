@@ -28,10 +28,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_logo">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.pedulibicara.pedulibicara.utils.EmailEditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
             android:hint="@string/email" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -45,10 +46,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_email">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.pedulibicara.pedulibicara.utils.PasswordEditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:ems="10"
             android:hint="@string/password" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,6 +79,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
             android:layout_weight="1"
             android:text="@string/have_account" />
 
@@ -84,6 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
+            android:fontFamily="@font/poppins_medium"
             android:layout_weight="1"
             style="@style/textButton"
             android:text="@string/register" />
