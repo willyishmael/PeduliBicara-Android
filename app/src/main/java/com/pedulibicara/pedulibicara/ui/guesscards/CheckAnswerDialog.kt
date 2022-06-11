@@ -1,5 +1,6 @@
 package com.pedulibicara.pedulibicara.ui.guesscards
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.View
@@ -24,12 +25,19 @@ class CheckAnswerDialog(
     private lateinit var binding: DialogCheckAnswerBinding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        return super.onCreateDialog(savedInstanceState)
-
-        uploadImage()
+        binding = DialogCheckAnswerBinding.inflate(layoutInflater)
+        val builder = AlertDialog.Builder(requireActivity())
+        builder.setView(binding.root)
+        return builder.create()
     }
 
-    private fun uploadImage() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        uploadFile()
+    }
+
+    private fun uploadFile() {
         setLoading(true)
         lifecycleScope.launchWhenStarted {
             launch {
