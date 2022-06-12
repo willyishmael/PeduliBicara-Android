@@ -1,5 +1,8 @@
 package com.pedulibicara.pedulibicara.ui.guessvoice
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.os.Bundle
@@ -13,6 +16,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.pedulibicara.pedulibicara.R
 import com.pedulibicara.pedulibicara.data.model.Question
 import com.pedulibicara.pedulibicara.databinding.FragmentGuessVoicePlayBinding
 
@@ -133,6 +137,9 @@ class GuessVoicePlayFragment : Fragment() {
     private fun checkAnswer(clickedButton: Int) {
         if (clickedButton == currentAnswerPosition) {
             viewModel.addScore()
+            showCorrectDialog()
+        } else {
+            showWrongDialog()
         }
         Log.d("checkAnswer()","score = ${viewModel.getFinalScore()}")
     }
@@ -146,5 +153,23 @@ class GuessVoicePlayFragment : Fragment() {
                 finalScore = viewModel.getFinalScore()
                 findNavController().navigate(this)
             }
+    }
+
+    private fun showCorrectDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.apply {
+            setContentView(R.layout.dialog_correct_answer)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            show()
+        }
+    }
+
+    private fun showWrongDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.apply {
+            setContentView(R.layout.dialog_wrong_answer)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            show()
+        }
     }
 }
