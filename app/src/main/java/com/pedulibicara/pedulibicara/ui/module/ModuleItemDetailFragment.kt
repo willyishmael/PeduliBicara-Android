@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.pedulibicara.pedulibicara.databinding.FragmentModuleItemDetailBinding
+import androidx.appcompat.app.AppCompatActivity
 
 class ModuleItemDetailFragment : Fragment() {
 
@@ -39,6 +40,9 @@ class ModuleItemDetailFragment : Fragment() {
         val moduleItem = ModuleItemDetailFragmentArgs
             .fromBundle(arguments as Bundle)
             .moduleItem
+//        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+//        binding.titleToolbar.text = moduleItem.name
+        (activity as AppCompatActivity).supportActionBar?.title = moduleItem.name
 
         binding.apply {
             Glide.with(requireContext())

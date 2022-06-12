@@ -8,5 +8,8 @@ class ModuleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_module)
+
+//        supportActionBar?.hide()
+
     }
 }
