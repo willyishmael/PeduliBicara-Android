@@ -57,8 +57,22 @@ class LoginFragment : Fragment() {
             }
 
             // Skip Login
-            btnLogin.setOnClickListener { view ->
-                view.findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
+            btnLogin.setOnClickListener{ view ->
+                val email = binding.etEmail.text.toString()
+                val password = binding.etPassword.text.toString()
+                when {
+                    email.isEmpty() -> {
+                        binding.etEmail.error = "Masukkan email"
+                    }
+                    password.isEmpty() -> {
+                        binding.etPassword.error = "Masukkan password"
+                    }
+                    else -> {
+                        view.findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
+//
+                    }
+                }
+
             }
 
         }

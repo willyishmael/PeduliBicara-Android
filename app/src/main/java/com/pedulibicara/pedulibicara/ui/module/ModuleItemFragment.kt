@@ -12,6 +12,7 @@ import com.pedulibicara.pedulibicara.data.local.Data
 import com.pedulibicara.pedulibicara.data.model.ModuleItem
 import com.pedulibicara.pedulibicara.databinding.FragmentModuleItemBinding
 import com.pedulibicara.pedulibicara.ui.adapter.ModuleItemAdapter
+import androidx.appcompat.app.AppCompatActivity
 
 class ModuleItemFragment : Fragment() {
 
@@ -37,9 +38,11 @@ class ModuleItemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val categoryKey = ModuleItemFragmentArgs.fromBundle(arguments as Bundle).categoryKey
         listModuleItem = viewModel.getModuleItems(categoryKey)
-
+        (activity as AppCompatActivity).supportActionBar?.title = categoryKey
+//        binding.titleToolbar.text = categoryKey
         setupRecyclerView()
     }
 

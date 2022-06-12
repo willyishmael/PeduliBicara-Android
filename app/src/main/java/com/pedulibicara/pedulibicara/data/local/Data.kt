@@ -99,7 +99,7 @@ object Data {
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.foot),
-            image = 0,
+            image = R.drawable.img_sole,
             sound = R.raw.snd_foot
         ),
         ModuleItem(
@@ -135,7 +135,7 @@ object Data {
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.belly),
-            image = 0,
+            image = R.drawable.img_belly,
             sound = R.raw.snd_belly
         ),
         ModuleItem(
@@ -147,7 +147,7 @@ object Data {
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.knee),
-            image = 0,
+            image = R.drawable.img_knee,
             sound = R.raw.snd_knee
         ),
         ModuleItem(
@@ -171,7 +171,7 @@ object Data {
         ModuleItem(
             category = MODULE_BODY_PARTS,
             name = Strings.get(R.string.leg),
-            image = 0,
+            image = R.drawable.img_leg,
             sound = R.raw.snd_leg
         ),
         ModuleItem(
@@ -201,7 +201,7 @@ object Data {
         ModuleItem(
             category = MODULE_FOOD,
             name = Strings.get(R.string.fried_chicken),
-            image = 0,
+            image = R.drawable.img_chicken,
             sound = R.raw.snd_fried_chicken,
         ),
         ModuleItem(
@@ -213,7 +213,7 @@ object Data {
         ModuleItem(
             category = MODULE_FOOD,
             name = Strings.get(R.string.cheese),
-            image = 0,
+            image = R.drawable.img_chesee,
             sound = R.raw.snd_cheese
         ),
         ModuleItem(
@@ -225,37 +225,37 @@ object Data {
         ModuleItem(
             category = MODULE_FOOD,
             name = Strings.get(R.string.pudding),
-            image = 0,
+            image = R.drawable.img_pudding,
             sound = R.raw.snd_pudding
         ),
         ModuleItem(
             category = MODULE_FOOD,
             name = Strings.get(R.string.milk),
-            image = 0,
+            image = R.drawable.img_milk,
             sound = R.raw.snd_milk
         ),
         ModuleItem(
             category = MODULE_FOOD,
             name = Strings.get(R.string.sausage),
-            image = 0,
+            image = R.drawable.img_sausage,
             sound = R.raw.snd_sausage
         ),
         ModuleItem(
             category = MODULE_FOOD,
             name = Strings.get(R.string.lettuce),
-            image = 0,
+            image = R.drawable.img_lettuce,
             sound = R.raw.snd_lettuce
         ),
         ModuleItem(
             category = MODULE_FOOD,
             name = Strings.get(R.string.donut),
-            image = 0,
+            image = R.drawable.img_donut,
             sound = R.raw.snd_donut
         ),
         ModuleItem(
             category = MODULE_FOOD,
             name = Strings.get(R.string.bread),
-            image = 0,
+            image = R.drawable.img_bread,
             sound = R.raw.snd_bread
         ),
         ModuleItem(
@@ -345,13 +345,13 @@ object Data {
         ModuleItem(
             category = MODULE_ANIMALS,
             name = Strings.get(R.string.bird),
-            image = 0,
+            image = R.drawable.img_bird,
             sound = R.raw.snd_bird
         ),
         ModuleItem(
             category = MODULE_ANIMALS,
             name = Strings.get(R.string.elephant),
-            image = 0,
+            image = R.drawable.img_elephant,
             sound = R.raw.snd_elephant
         ),
         ModuleItem(
@@ -369,31 +369,31 @@ object Data {
         ModuleItem(
             category = MODULE_ANIMALS,
             name = Strings.get(R.string.turtle),
-            image = 0,
+            image = R.drawable.img_turtle,
             sound = R.raw.snd_turtle
         ),
         ModuleItem(
             category = MODULE_ANIMALS,
             name = Strings.get(R.string.monkey),
-            image = 0,
+            image = R.drawable.img_monkey,
             sound = R.raw.snd_monkey
         ),
         ModuleItem(
             category = MODULE_ANIMALS,
             name = Strings.get(R.string.panda),
-            image = 0,
+            image = R.drawable.img_monkey,
             sound = R.raw.snd_panda
         ),
         ModuleItem(
             category = MODULE_ANIMALS,
             name = Strings.get(R.string.penguin),
-            image = 0,
+            image = R.drawable.img_pinguin,
             sound = R.raw.snd_penguin
         ),
         ModuleItem(
             category = MODULE_ANIMALS,
             name = Strings.get(R.string.deer),
-            image = 0,
+            image = R.drawable.img_deer,
             sound = R.raw.snd_deer
         ),
         ModuleItem(
@@ -405,13 +405,13 @@ object Data {
         ModuleItem(
             category = MODULE_ANIMALS,
             name = Strings.get(R.string.lion),
-            image = 0,
+            image = R.drawable.img_lion,
             sound = R.raw.snd_lion
         ),
         ModuleItem(
             category = MODULE_ANIMALS,
             name = Strings.get(R.string.zebra),
-            image = 0,
+            image = R.drawable.img_zebra,
             sound = R.raw.snd_zebra
         ),
         ModuleItem(

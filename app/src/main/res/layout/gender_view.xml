@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@drawable/img_boy" />
 
         <TextView
             android:id="@+id/tv_gender"
