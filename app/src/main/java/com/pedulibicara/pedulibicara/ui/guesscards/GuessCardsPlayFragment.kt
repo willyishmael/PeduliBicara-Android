@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.devlomi.record_view.OnRecordListener
 import com.pedulibicara.pedulibicara.R
@@ -40,7 +41,6 @@ class GuessCardsPlayFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var question: ModuleItem
-    private lateinit var dialog: Dialog
     private var mediaRecorder: MediaRecorder? = null
 
     override fun onCreateView(
@@ -100,9 +100,24 @@ class GuessCardsPlayFragment : Fragment() {
     }
 
     private fun nextQuestion() {
-        viewModel.nextQuestion()
-        question = viewModel.getQuestion()
-        setupView()
+        if (viewModel.isGameFinished()) {
+            gameFinished()
+        } else {
+            viewModel.nextQuestion()
+            question = viewModel.getQuestion()
+            setupView()
+        }
+    }
+
+    private fun gameFinished() {
+        GuessCardsPlayFragmentDirections
+            .actionGuessCardsPlayFragmentToGameResultFragment2()
+            .apply {
+                questionCount = GuessCardsPlayViewModel.QUESTION_COUNT.toFloat()
+                rightAnswer = viewModel.getRightAnswer()
+                finalScore = viewModel.getFinalScore()
+                findNavController().navigate(this)
+            }
     }
 
     private fun isMicrophoneAvailable() : Boolean {
@@ -167,11 +182,12 @@ class GuessCardsPlayFragment : Fragment() {
                         response.onSuccess {
                             setLoading(false)
                             val isAnswerCorrect = viewModel.checkAnswer(it.result)
-                            showDialog(isAnswerCorrect)
+                            if (isAnswerCorrect) showCorrectDialog() else showWrongDialog()
+                            nextQuestion()
                         }
                         response.onFailure {
                             setLoading(false)
-                            showDialog(true)
+                            showResponseFailureDialog()
                             it.printStackTrace()
                         }
                     }
@@ -179,10 +195,31 @@ class GuessCardsPlayFragment : Fragment() {
         }
     }
 
-    private fun showDialog(isAnswerCorrect: Boolean) {
-        dialog.setContentView(R.layout.dialog_check_answer)
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.show()
+    private fun showCorrectDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.apply {
+            setContentView(R.layout.dialog_correct_answer)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            show()
+        }
+    }
+
+    private fun showWrongDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.apply {
+            setContentView(R.layout.dialog_wrong_answer)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            show()
+        }
+    }
+
+    private fun showResponseFailureDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.apply {
+            setContentView(R.layout.dialog_response_failure)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            show()
+        }
     }
 
     private fun setLoading(state: Boolean) {
@@ -191,7 +228,6 @@ class GuessCardsPlayFragment : Fragment() {
 
     companion object {
         private const val MICROPHONE_PERMISSION_CODE = 200
-        private const val DIALOG_TAG = "checkAnswerDialog"
     }
 
 }

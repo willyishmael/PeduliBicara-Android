@@ -18,6 +18,9 @@
         <entry key="..\:/AndroidProjectHome/PeduliBicara-Android/app/src/main/res/layout/module_item_view.xml" value="0.209375" />
         <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/activity_auth.xml" value="0.209375" />
         <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/dialog_check_answer.xml" value="0.209375" />
+        <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/dialog_correct_answer.xml" value="0.209375" />
+        <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/dialog_response_failure.xml" value="0.209375" />
+        <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/dialog_wrong_answer.xml" value="0.209375" />
         <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/fragment_game_result.xml" value="0.209375" />
         <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/fragment_guess_cards_play.xml" value="0.209375" />
         <entry key="..\:/AndroidProjects/PeduliBicara-Android/app/src/main/res/layout/fragment_guess_voice_play.xml" value="0.209375" />

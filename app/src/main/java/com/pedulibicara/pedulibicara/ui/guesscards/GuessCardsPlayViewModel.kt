@@ -89,6 +89,18 @@ class GuessCardsPlayViewModel : ViewModel() {
         } else false
     }
 
+    /**
+     * Check if there is no question left
+     * @return Boolean
+     */
+    fun isGameFinished(): Boolean {
+        return currentQuestionPosition >= QUESTION_COUNT
+    }
+
+    fun getRightAnswer() = score.toFloat()
+
+    fun getFinalScore() = getRightAnswer() / QUESTION_COUNT
+
     companion object {
         const val QUESTION_COUNT = 5
     }

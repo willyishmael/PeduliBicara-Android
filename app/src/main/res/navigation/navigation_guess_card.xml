@@ -22,6 +22,18 @@
         <action
             android:id="@+id/action_gameResultFragment2_to_mainActivity3"
             app:destination="@id/mainActivity3" />
+        <argument
+            android:name="questionCount"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="rightAnswer"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="finalScore"
+            app:argType="float"
+            android:defaultValue="0" />
     </fragment>
     <activity
         android:id="@+id/mainActivity3"
