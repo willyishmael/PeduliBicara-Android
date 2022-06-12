@@ -30,5 +30,29 @@
         android:id="@+id/gameResultFragment"
         android:name="com.pedulibicara.pedulibicara.ui.gameresult.GameResultFragment"
         android:label="fragment_game_result"
-        tools:layout="@layout/fragment_game_result" />
+        tools:layout="@layout/fragment_game_result" >
+        <argument
+            android:name="questionCount"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="rightAnswer"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="finalScore"
+            app:argType="float"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_gameResultFragment_to_mainActivity2"
+            app:destination="@id/mainActivity2"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/mainActivity2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.pedulibicara.pedulibicara.ui.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>

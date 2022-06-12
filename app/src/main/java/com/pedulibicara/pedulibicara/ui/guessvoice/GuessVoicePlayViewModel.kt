@@ -12,6 +12,12 @@ class GuessVoicePlayViewModel : ViewModel() {
     private fun getAllModuleItem() = repository.getAllModuleItem()
     private fun getModuleItems(category: String) = repository.getModuleItems(category)
 
+    private var questionCount = 0f
+    private var rightAnswer = 0f
+
+    fun getQuestionCount() = questionCount
+    fun getRightAnswer() = rightAnswer
+
     private fun getRandomModuleItem(count: Int) : List<ModuleItem> {
         val list = getAllModuleItem()
         val listCount = list.count()
@@ -41,6 +47,7 @@ class GuessVoicePlayViewModel : ViewModel() {
     }
 
     fun getQuestions(count: Int) : List<Question> {
+        questionCount = count.toFloat()
         val listRandomModuleItem = getRandomModuleItem(count)
         val listQuestion = mutableListOf<Question>()
 
@@ -77,11 +84,17 @@ class GuessVoicePlayViewModel : ViewModel() {
         )
 
         for (i in 0 until 4) {
-            list[i] = listOption[pattern[i]]
+            list[pattern[i]] = listOption[i]
         }
 
         return list
     }
+
+    fun addScore() {
+        rightAnswer += 1
+    }
+
+    fun getFinalScore() : Float = (rightAnswer / questionCount) * 100
 
     companion object {
         private const val FALSE_OPTIONS_COUNT = 3

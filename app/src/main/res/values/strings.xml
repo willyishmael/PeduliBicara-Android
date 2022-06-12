@@ -104,4 +104,7 @@
     <string name="duck">Bebek</string>
     <string name="boy">Laki-laki</string>
     <string name="girl">Perempuan</string>
+    <string name="question_count">Soal: </string>
+    <string name="right_answer">Benar:</string>
+    <string name="wrong_answer">Salah:</string>
 </resources>
