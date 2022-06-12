@@ -1,8 +1,17 @@
 package com.pedulibicara.pedulibicara.ui.splash
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.WindowManager
+import com.pedulibicara.pedulibicara.R
+import com.pedulibicara.pedulibicara.ui.main.MainActivity
 
+@Suppress("DEPRECATION")
+@SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
