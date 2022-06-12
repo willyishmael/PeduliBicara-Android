@@ -44,8 +44,8 @@ interface ApiService {
      */
     @Multipart
     @POST("model")
-    suspend fun  predict(
-        @Part("file") file: MultipartBody.Part
+    suspend fun predict(
+        @Part file: MultipartBody.Part
     ): ModelResponse
 
 }

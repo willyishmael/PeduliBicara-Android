@@ -1,8 +1,11 @@
 package com.pedulibicara.pedulibicara.ui.guesscards
 
 import android.Manifest
+import android.app.Dialog
 import android.content.ContextWrapper
 import android.content.pm.PackageManager
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.media.MediaRecorder
 import android.os.Build
 import android.os.Bundle
@@ -16,10 +19,17 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.devlomi.record_view.OnRecordListener
+import com.pedulibicara.pedulibicara.R
 import com.pedulibicara.pedulibicara.data.model.ModuleItem
 import com.pedulibicara.pedulibicara.databinding.FragmentGuessCardsPlayBinding
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
 class GuessCardsPlayFragment : Fragment() {
@@ -30,6 +40,7 @@ class GuessCardsPlayFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var question: ModuleItem
+    private lateinit var dialog: Dialog
     private var mediaRecorder: MediaRecorder? = null
 
     override fun onCreateView(
@@ -76,13 +87,8 @@ class GuessCardsPlayFragment : Fragment() {
 
                 override fun onFinish(recordTime: Long, limitReached: Boolean) {
                     stopRecordAudio()
-
                     val file = File(getRecordingFilePath())
-
-                    CheckAnswerDialog(viewModel, file) {
-                        nextQuestion()
-                    }.show(parentFragmentManager, DIALOG_TAG)
-
+                    uploadFile(file)
                 }
 
                 override fun onLessThanSecond() {
@@ -142,8 +148,45 @@ class GuessCardsPlayFragment : Fragment() {
     private fun getRecordingFilePath(): String {
         val contextWrapper = ContextWrapper(requireContext().applicationContext)
         val musicDirectory = contextWrapper.getExternalFilesDir(Environment.DIRECTORY_MUSIC)
-        val file = File(musicDirectory, "recordingFile.mp3")
+        val file = File(musicDirectory, "recordingFile.wav")
         return file.path
+    }
+
+    private fun uploadFile(file: File) {
+        setLoading(true)
+        lifecycleScope.launchWhenStarted {
+            launch {
+                val requestAudioFile = file.asRequestBody("audio/wav".toMediaTypeOrNull())
+                val audioMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                    "audio",
+                    file.name,
+                    requestAudioFile
+                )
+                viewModel.predictVoice(audioMultipart)
+                    .collect { response ->
+                        response.onSuccess {
+                            setLoading(false)
+                            val isAnswerCorrect = viewModel.checkAnswer(it.result)
+                            showDialog(isAnswerCorrect)
+                        }
+                        response.onFailure {
+                            setLoading(false)
+                            showDialog(true)
+                            it.printStackTrace()
+                        }
+                    }
+            }
+        }
+    }
+
+    private fun showDialog(isAnswerCorrect: Boolean) {
+        dialog.setContentView(R.layout.dialog_check_answer)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.show()
+    }
+
+    private fun setLoading(state: Boolean) {
+        binding.loadingLayout.visibility = if (state) View.VISIBLE else View.GONE
     }
 
     companion object {
