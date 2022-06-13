@@ -8,7 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import com.pedulibicara.pedulibicara.R
-import com.pedulibicara.pedulibicara.ui.main.MainActivity
+import com.pedulibicara.pedulibicara.ui.auth.AuthActivity
 
 @Suppress("DEPRECATION")
 @SuppressLint("CustomSplashScreen")
@@ -21,7 +21,7 @@ class SplashScreenActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
             finish()
         }, second.toLong())
