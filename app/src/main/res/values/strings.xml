@@ -107,4 +107,6 @@
     <string name="question_count">Soal: </string>
     <string name="right_answer">Benar:</string>
     <string name="wrong_answer">Salah:</string>
+    <string name="slide_to_cancel">Geser untuk membatalkan</string>
+    <string name="response_failure">Pengecekan gagal</string>
 </resources>

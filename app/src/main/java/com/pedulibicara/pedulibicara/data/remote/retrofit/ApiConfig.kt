@@ -34,6 +34,6 @@ class ApiConfig {
             return retrofit.create(ApiService::class.java)
         }
 
-        private const val API_BASE_URL = "35.223.185.214:8080/"
+        private const val API_BASE_URL = "https://35.223.185.214:8080/"
     }
 }
